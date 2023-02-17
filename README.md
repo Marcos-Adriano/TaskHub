@@ -18,4 +18,4 @@ Para começar a usar o TaskHub, você precisará clonar este repositório e abri
 Se você tiver alguma ideia para melhorar o TaskHub, fique à vontade para enviar um pull request para este repositório.
 
 ## **Licença**
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE.md para mais detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
