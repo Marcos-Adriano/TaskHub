@@ -5,12 +5,21 @@
 }
 
 body {
-    background: linear-gradient(90deg, #f2d09a, #ed8975);
+    background: linear-gradient(90deg, #30597d, #75aded);
     font-family: 'Poppins', sans-serif;
     font-family: 'Tilt Neon', cursive;
 }
 
-div {
+.header {
+    display: flex;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#register-form {
+    border: 3px solid #438bc1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +28,7 @@ div {
     width: 350px;
     height: 650px;
     top: 50%;
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
     background-color: #304d63;
     border-radius: 15px;
@@ -35,12 +44,12 @@ span {
 }
 
 #input-area input{
+    border: 2px solid #438bc1;
     margin-top: 2px;
     font-size: 15px;
     width: 220px;
     height: 35px;
     padding-left: 5px;
-    border: none;
     outline: none;
     border-radius: 7px;
     font-family: 'Tilt Neon', cursive;
