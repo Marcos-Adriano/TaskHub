@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plandoit HUB</title>
-    <link rel="stylesheet" href="plandoit.css">
+    <link rel="stylesheet" href="./css/plandoit.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <script src="./js/plandoit.js" defer></script>
 </head>
 <body>
     
@@ -19,7 +21,7 @@
             </svg>
         </button>
         <div class="logo_header">
-            <img src="123.png" alt="imagem-logo" id="img-logo-header">
+            <img src="./images/123.png" alt="imagem-logo" id="img-logo-header">
         </div>
         <div class="navigation-bar" id="navigation-bar">
             <button onclick="toggleSidebar()" class="btn-icon-header">
@@ -30,47 +32,31 @@
             <a href="#">Taskhub</a>
             <a href="#">Tags</a>
             <a href="#">About</a>
-            <a id="task" href="#">+ Add task</a>
+
+            <button id="abrir-formulario">Nova Tarefa</button>
+
+            <div id="formulario" style="display: none;">
+              <h2>Nova Tarefa</h2>
+              <form>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo">
+                <br>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao"></textarea>
+                <br>
+                <button type="submit" id="salvar">Salvar</button>
+                <button type="button" id="cancelar">Cancelar</button>
+              </form>
+            </div>
+        </div>
+
         </div>
     </div>
     <div tabindex='0' onclick="closeSidebar()" class="content" id="content">
-          <h1>CENTRAL DE TASKS</h1>  
+          <h1>CENTRAL DE TASKS</h1>
+          <ul id="lista-tarefas"></ul>
     </div>
 
-    
-    <script>
-        var header = document.getElementById('header')
-        var navigationBar = document.getElementById('navigation-bar');
-        var content = document.getElementById('content')
-        var showSidebar = false;
-
-        function toggleSidebar() {
-            showSidebar = !showSidebar
-            console.log(showSidebar);
-            if(showSidebar) {
-                navigationBar.style.marginLeft = '-10vw';
-                navigationBar.style.animationName = 'showSidebar';
-                content.style.filter = 'blur(2px)';
-            }
-
-            else {
-                navigationBar.style.marginLeft = '-100vw';
-                navigationBar.style.animationName = '';
-                content.style.filter = '';
-            }
-        }
-
-        function closeSidebar() {
-            if (showSidebar) {
-                toggleSidebar();
-            }
-        }
-
-        window.addEventListener('resize', function(event){
-            if(window.innerWidth > 768 && showSidebar) {
-                toggleSidebar
-            }
-        })
-    </script>
+    <script src="./js/add-task.js" defer></script>
 </body>
 </html>
