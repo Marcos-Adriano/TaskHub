@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const descricaoTarefa = document.createElement('p');
     descricaoTarefa.textContent = descricao.value;
     const botaoConcluido = document.createElement('button');
+    botaoConcluido.classList.add('botao-concluido');
     botaoConcluido.textContent = 'Concluído';
     botaoConcluido.setAttribute('data-tarefa-id', contadorTarefas);
     botaoConcluido.addEventListener('click', (event) => {
