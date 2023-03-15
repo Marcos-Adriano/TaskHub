@@ -1,10 +1,12 @@
- CREATE DATABASE task_manager;
+CREATE DATABASE task_manager;
 
 USE task_manager;
 
 CREATE TABLE categories (
   category_id INT AUTO_INCREMENT PRIMARY KEY,
-  category_name VARCHAR(255) NOT NULL
+  category_name VARCHAR(255) NOT NULL,
+  category_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  category_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE users (
@@ -12,12 +14,16 @@ CREATE TABLE users (
   user_name VARCHAR(255) NOT NULL,
   user_email VARCHAR(255) NOT NULL,
   user_password VARCHAR(255) NOT NULL,
-  user_permission TINYINT(1) DEFAULT 0
+  user_permission TINYINT(1) DEFAULT 0,
+  user_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  user_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE tags (
   tag_id INT AUTO_INCREMENT PRIMARY KEY,
-  tag_name VARCHAR(255) NOT NULL
+  tag_name VARCHAR(255) NOT NULL,
+  tag_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  tag_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE tasks (
@@ -29,23 +35,17 @@ CREATE TABLE tasks (
   task_description TEXT,
   task_due_date DATE,
   task_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  task_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY (category_id) REFERENCES categories(category_id),
-  FOREIGN KEY (user_id) REFERENCES users(user_id)
+  task_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE task_tags (
   task_id INT NOT NULL,
   tag_id INT NOT NULL,
-  PRIMARY KEY (task_id, tag_id),
-  FOREIGN KEY (task_id) REFERENCES tasks(task_id),
-  FOREIGN KEY (tag_id) REFERENCES tags(tag_id)
+  PRIMARY KEY (task_id, tag_id)
+  
 );
 
-CREATE TABLE category_tags (
-  category_id INT NOT NULL,
-  tag_id INT NOT NULL,
-  PRIMARY KEY (category_id, tag_id),
-  FOREIGN KEY (category_id) REFERENCES categories(category_id),
-  FOREIGN KEY (tag_id) REFERENCES tags(tag_id)
-);
+ALTER TABLE tasks ADD FOREIGN KEY (category_id) REFERENCES categories(category_id);
+ALTER TABLE tasks ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
+ALTER TABLE task_tags ADD FOREIGN KEY (task_id) REFERENCES tasks(task_id);
+ALTER TABLE task_tags ADD FOREIGN KEY (tag_id) REFERENCES tags(tag_id);
