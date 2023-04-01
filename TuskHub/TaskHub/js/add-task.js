@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const botaoAbrirFormulario = document.getElementById('abrir-formulario');
   const formulario = document.getElementById('formulario');
   const botaoCancelar = document.getElementById('cancelar');
@@ -22,13 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const novaTarefa = document.createElement('li');
     novaTarefa.classList.add('container'); // adiciona a classe "container" ao elemento "li"
-    
+
     const tituloTarefa = document.createElement('h3');
     tituloTarefa.textContent = titulo.value;
     const descricaoTarefa = document.createElement('p');
     descricaoTarefa.textContent = descricao.value;
     const botaoConcluido = document.createElement('button');
-    botaoConcluido.classList.add('botao-concluido');
     botaoConcluido.textContent = 'Concluído';
     botaoConcluido.setAttribute('data-tarefa-id', contadorTarefas);
     botaoConcluido.addEventListener('click', (event) => {
