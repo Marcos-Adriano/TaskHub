@@ -4,7 +4,7 @@
 class Connection
 {
 
-
+   
     private $connection;
 
     function __construct()
@@ -30,7 +30,9 @@ class Connection
         $prepare->bindParam(3,$_POST['passwordb']);  
         $prepare->execute();
 
-        return $prepare->rowCount(); 
+        
+        return $prepare->rowCount();
+         
     }
     
     public function plandoit()
@@ -66,10 +68,30 @@ class Connection
         $sql = "SELECT * FROM users WHERE user_email=? AND user_password=?";
 
         $prepare=$this->connection->prepare($sql);
-
-        $prepare->bindParam(1,$_POST['userEmail']);  
-        $prepare->bindParam(2,$_POST['userPassword']);  
+        $prepare->bindParam(1,$_POST['userEmail']);
+        $prepare->bindParam(2,$_POST['userPassword']);
         $prepare->execute();
+
+        $result=$prepare->fetch(PDO::FETCH_ASSOC);
+        $result2=$result['user_id'];
+
+        if($result != null){
+       
+        foreach($result as $key=>$value){
+
+            echo $key.": ".$value."<br>";
+
+        }
+
+        }else{
+
+        echo "Usuário não encontrado";
+        
+        }
+        echo "<hr>";
+        
+        echo $result2;
+      
 
     }
 }

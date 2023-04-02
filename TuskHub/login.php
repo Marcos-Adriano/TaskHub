@@ -6,6 +6,6 @@ $init= new Connection();
 
 $init->login();
 
-include('plandoit.php');
+
 
 ?>

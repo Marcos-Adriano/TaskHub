@@ -51,8 +51,8 @@
                     <label for="descricao">Descrição:</label>
                     <textarea id="descricao" name="description"></textarea>
                     <br>
-                    <button type="submit" onclick="showConfirm()" id="salvar">Salvar</button>
-                  <button type="submit" id="cancelar">Cancelar</button>
+                    <button type="submit" id="salvar">Salvar</button> <!--onclick="showConfirm()" -->
+               <!--<button type="submit" id="cancelar">Cancelar</button> -->
                 </form>
             </div>
         </div>
@@ -72,7 +72,7 @@
 
 <?php 
 
- /*
+ 
 try{
 
    include('Connection.php'); //Inclui o arquivo de conexão
@@ -83,6 +83,6 @@ try{
     
     }catch(Exception $e){
         echo ' ';
-    }*/
+    }
 
 ?>
