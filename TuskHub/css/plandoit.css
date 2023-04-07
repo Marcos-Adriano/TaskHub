@@ -41,8 +41,6 @@ ul {
   list-style: none;
   padding: 0;
   margin: 20px 0 0 20px;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 li {
@@ -51,26 +49,14 @@ li {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin-bottom: 10px;
-  min-width: 20%;
 }
 
 h3 {
   margin-top: 0;
 }
 
-.botao-concluido{
-  max-width: 10em;
-  margin: 0 auto;
-  margin-top: 3em;
-  background-color: #304d63;
-  color: whitesmoke;
-border: none;
-  min-width: 9em;
-}
-
 button {
   margin-left: 10px;
-
 }
 
 li span {

@@ -55,6 +55,13 @@ span {
     font-family: 'Tilt Neon', cursive;
 }
 
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
 button {
     color: white;
     font-size: 15px;
