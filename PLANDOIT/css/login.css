@@ -43,9 +43,9 @@ body {
     border-radius: 15px;
     border: 3px solid #438bc1;
     background-color: #304d63;
-    width: 50%; /* set the width of the image to 100% of the div */
-    height: auto; /* set the height of the image to auto to maintain aspect ratio */
-    display: block; /* remove any default spacing around the image */
+    width: 50%;
+    height: auto;
+    display: block;
 }
 
 #text-area {
