@@ -47,7 +47,12 @@ body {
     font-size: 24px;
 }
 span {
+    font-family: 'Poppins', sans-serif;
     color: whitesmoke
+}
+
+#title {
+    font-family: 'Poppins', sans-serif;
 }
 
 #input-area input{
