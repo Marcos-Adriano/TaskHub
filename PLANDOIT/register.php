@@ -14,11 +14,12 @@
 
 <body>
     <div class="header">
-        <img src="./images/123.png" alt="logo" />
+        <img src="./images/en.png" alt="logo" />
     </div>
     <div id="register-form">
+        <img src="./images/321.png" alt="LogoForm">
         <section id="text-area">
-            <h1>Sign up</h1><br>
+            <h1 id="title">Sign up</h1>
         </section>
         <section id="form">
             <form action="register.php" method="POST" id="input-area" aria-autocomplete="none">
@@ -38,3 +39,37 @@
 </body>
 
 </html>
+
+<?php
+
+session_start();
+
+try{
+require 'Connection.php'; // Inclui o arquivo de conexão
+
+$init = new Connection();
+
+$sql = "INSERT INTO users(user_name, user_email, user_password) VALUES (?, ?, ?)";
+
+$prepare = $init->connection->prepare($sql);
+$prepare->bindParam(1, $_POST['name']);
+$prepare->bindParam(2, $_POST['email']);
+$prepare->bindParam(3, $_POST['passwordb']);
+$prepare->execute();
+
+// Obtém o user_id do usuário inserido
+$user_id = $init->connection->lastInsertId();
+
+$_SESSION['user_id'] = $user_id;
+
+// Redireciona para a página desejada
+header("Location: plandoit.php");
+exit();
+
+}catch(Exception $e){
+
+echo ' ';
+
+}
+
+?>

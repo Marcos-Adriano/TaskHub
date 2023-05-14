@@ -5,9 +5,10 @@
 }
 
 body {
-    background: linear-gradient(90deg, #30597d, #75aded);
+    background-color: #f0efec;
     font-family: 'Poppins', sans-serif;
-    font-family: 'Tilt Neon', cursive;
+    width: 100%;
+    max-width: 100%;
 }
 
 .header {
@@ -35,12 +36,23 @@ body {
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
 
+#register-form img {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
 #text-area {
     color: aliceblue;
     font-size: 24px;
 }
 span {
+    font-family: 'Poppins', sans-serif;
     color: whitesmoke
+}
+
+#title {
+    font-family: 'Poppins', sans-serif;
 }
 
 #input-area input{

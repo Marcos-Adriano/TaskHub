@@ -72,17 +72,44 @@
 
 <?php 
 
+session_start();
  
-try{
+ try{
 
-   include('Connection.php'); //Inclui o arquivo de conexão
     
-    $init= new Connection();
+    include('Connection.php'); //Inclui o arquivo de conexão
     
-    $init->plandoit();
+     $init= new Connection();
     
+        $sql = 'INSERT INTO tasks(task_id, task_name, category_id, user_id, task_status, task_description, task_due_date)VALUES(?,?,?,?,?,?,?)';
+        
+        $id=$_SESSION['user_id'];
+
+        $teste=Null;
+        $teste2='text2';
+        $teste3='1';
+        $teste4=$id;
+        $teste5='0';
+        $teste6='text4';
+        $teste7=NULL;
+        
+        $prepare=$init->connection->prepare($sql);
+
+        $prepare->bindParam(1,$teste);
+        $prepare->bindParam(2,$_POST['task']);
+        $prepare->bindParam(3,$teste3);
+        $prepare->bindParam(4,$teste4);
+        $prepare->bindParam(5,$teste5);
+        $prepare->bindParam(6,$_POST['description']);
+        $prepare->bindParam(7,$teste7);
+        $prepare->execute();
+                
+        return $prepare->rowCount();
+        mysqli_close($connection); 
+        return $id;
+
     }catch(Exception $e){
-        echo ' ';
-    }
+         echo ' ';
+     }
 
-?>
+ ?>
