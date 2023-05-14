@@ -73,16 +73,16 @@
 <?php 
 
  
-try{
+ try{
 
-   include('Connection.php'); //Inclui o arquivo de conexão
+    include('Connection.php'); //Inclui o arquivo de conexão
     
-    $init= new Connection();
+     $init= new Connection();
     
-    $init->plandoit();
+     $init->plandoit();
     
-    }catch(Exception $e){
-        echo ' ';
-    }
+     }catch(Exception $e){
+         echo ' ';
+     }
 
-?>
+ ?>
