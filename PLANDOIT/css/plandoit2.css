@@ -235,14 +235,16 @@ body.dark .sidebar li a:hover .text{
 .mode .sun-moon i{
     position: absolute;
 }
-.mode .sun-moon i.sun{
+
+/* .mode .sun-moon i.sun{
     opacity: 0;
-}
+} */
+
 body.dark .mode .sun-moon i.sun{
-    opacity: 1;
+    opacity: 0;
 }
 body.dark .mode .sun-moon i.moon{
-    opacity: 0;
+    opacity: 1;
 }
 
 .menu-bar .bottom-content .toggle-switch{
