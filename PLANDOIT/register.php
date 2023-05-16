@@ -48,17 +48,18 @@ try{
 require 'Connection.php'; // Inclui o arquivo de conexão
 
 $init = new Connection();
+$db = $init->getConnection();
 
 $sql = "INSERT INTO users(user_name, user_email, user_password) VALUES (?, ?, ?)";
 
-$prepare = $init->connection->prepare($sql);
+$prepare = $db->prepare($sql);
 $prepare->bindParam(1, $_POST['name']);
 $prepare->bindParam(2, $_POST['email']);
 $prepare->bindParam(3, $_POST['passwordb']);
 $prepare->execute();
 
 // Obtém o user_id do usuário inserido
-$user_id = $init->connection->lastInsertId();
+$user_id = $db->lastInsertId();
 
 $_SESSION['user_id'] = $user_id;
 

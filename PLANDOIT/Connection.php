@@ -2,21 +2,22 @@
 
 class Connection
 {
+    protected $connection;
 
-
-    
-    function __construct()
+    public function __construct()
     {
         try {
-
             $this->connection = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
-        } catch (Exception $e) {
-
-            echo $e->getMessage();
+        } catch (PDOException $e) {
+            echo 'Erro de conexão: ' . $e->getMessage();
             die();
         }
     }
 
+    public function getConnection()
+    {
+        return $this->connection;
+    }
 }
 
 ?>

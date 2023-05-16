@@ -1,0 +1,6 @@
+criar um calendario para poder
+ter uma visão melhor do prazo
+das tarefas criadas.
+
+Substituir a aba de donate para
+o novo calendário.

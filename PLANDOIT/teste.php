@@ -5,12 +5,13 @@ session_start();
 require 'Connection.php'; // Inclui o arquivo de conexão
 
 $init = new Connection();
+$db = $init->getConnection();
 
 // ID específico a ser consultado
 $id = $_SESSION['user_id']; // Altere o valor do ID conforme necessário
 
 $sql = "SELECT * FROM tasks WHERE user_id = :id";
-$prepare = $init->connection->prepare($sql);
+$prepare = $db->prepare($sql);
 $prepare->bindParam(':id', $id);
 $prepare->execute();
 

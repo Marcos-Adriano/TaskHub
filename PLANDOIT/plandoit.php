@@ -80,6 +80,7 @@ session_start();
     include('Connection.php'); //Inclui o arquivo de conexão
     
      $init= new Connection();
+     $db = $init->getConnection();
     
         $sql = 'INSERT INTO tasks(task_id, task_name, category_id, user_id, task_status, task_description, task_due_date)VALUES(?,?,?,?,?,?,?)';
         
@@ -93,7 +94,7 @@ session_start();
         $teste6='text4';
         $teste7=NULL;
         
-        $prepare=$init->connection->prepare($sql);
+        $prepare=$db->prepare($sql);
 
         $prepare->bindParam(1,$teste);
         $prepare->bindParam(2,$_POST['task']);

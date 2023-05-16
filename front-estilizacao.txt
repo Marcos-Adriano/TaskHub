@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Gerenciamento de Tarefas</title>
+    <style>
+        /* Estilos CSS para as tarefas */
+        .task {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+        .task h3 {
+            margin: 0;
+        }
+
+        .task p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tarefas</h1>
+
+    <?php
+    // Se houver tarefas retornadas do banco de dados
+    if (!empty($rows)) {
+        // Loop através das tarefas e exibir os resultados
+        foreach ($rows as $row) {
+            ?>
+            <div class="task">
+                <h3>Tarefa ID: <?php echo $row['task_id']; ?></h3>
+                <p>Nome: <?php echo $row['task_name']; ?></p>
+                <p>Categoria ID: <?php echo $row['category_id']; ?></p>
+                <p>ID do Usuário: <?php echo $row['user_id']; ?></p>
+                <p>Status: <?php echo $row['task_status']; ?></p>
+                <p>Descrição: <?php echo $row['task_description']; ?></p>
+                <p>Data de Vencimento: <?php echo $row['task_due_date']; ?></p>
+                <p>Data de Criação: <?php echo $row['task_created_at']; ?></p>
+                <p>Data de Atualização: <?php echo $row['task_updated_at']; ?></p>
+                <!-- Adicione aqui os outros campos da tabela que deseja exibir -->
+            </div>
+            <?php
+        }
+    } else {
+        echo "<p>Nenhuma tarefa encontrada.</p>";
+    }
+    ?>
+</body>
+</html>

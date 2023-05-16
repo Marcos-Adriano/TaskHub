@@ -4,10 +4,11 @@ session_start();
 require 'Connection.php'; // Inclui o arquivo de conexão
 
 $init = new Connection();
+$db = $init->getConnection();
 
 if (isset($_POST['submit-button'])) {
     $sql = "SELECT * FROM users WHERE user_email=? AND user_password=?";
-    $prepare = $init->connection->prepare($sql);
+    $prepare = $db->prepare($sql);
     $prepare->bindParam(1, $_POST['userEmail']);
     $prepare->bindParam(2, $_POST['userPassword']);
     $prepare->execute();
