@@ -1,35 +1,77 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de Estilização com CSS</title>
+  <style>
+    /* Estilos CSS para a tabela */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-session_start();
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
 
-require 'Connection.php'; // Inclui o arquivo de conexão
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h2>Tarefas</h2>
 
-$init = new Connection();
-$db = $init->getConnection();
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Categoria</th>
+      <th>ID do Usuário</th>
+      <th>Status</th>
+      <th>Descrição</th>
+      <th>Data de Vencimento</th>
+      <th>Data de Criação</th>
+      <th>Data de Atualização</th>
+    </tr>
 
-// ID específico a ser consultado
-$id = $_SESSION['user_id']; // Altere o valor do ID conforme necessário
+    <?php
+    // Seu código PHP para buscar os dados e exibi-los
+    session_start();
 
-$sql = "SELECT * FROM tasks WHERE user_id = :id";
-$prepare = $db->prepare($sql);
-$prepare->bindParam(':id', $id);
-$prepare->execute();
+    require 'Connection.php'; // Inclui o arquivo de conexão
 
-$rows = $prepare->fetchAll(PDO::FETCH_ASSOC);
+    $init = new Connection();
+    $db = $init->getConnection();
 
-// Exibir os resultados
-foreach ($rows as $row) {
-    echo "ID: " . $row['task_id'] . "<br>";
-    echo "Nome: " . $row['task_name'] . "<br>";
-    echo "ID: " . $row['category_id'] . "<br>";
-    echo "Nome: " . $row['user_id'] . "<br>";
-    echo "ID: " . $row['task_status'] . "<br>";
-    echo "Nome: " . $row['task_description'] . "<br>";
-    echo "Nome: " . $row['task_due_date'] . "<br>";
-    echo "ID: " . $row['task_created_at'] . "<br>";
-    echo "Nome: " . $row['task_updated_at'] . "<br>";
-    // Adicione aqui os outros campos da tabela que deseja exibir
-    echo "<br>";
-}
+    // ID específico a ser consultado
+    $id = $_SESSION['user_id']; // Altere o valor do ID conforme necessário
 
-?>
+    $sql = "SELECT * FROM tasks WHERE user_id = :id";
+    $prepare = $db->prepare($sql);
+    $prepare->bindParam(':id', $id);
+    $prepare->execute();
+
+    $rows = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+    // Exibir os resultados
+    foreach ($rows as $row) {
+        echo "<tr>";
+        echo "<td>" . $row['task_id'] . "</td>";
+        echo "<td>" . $row['task_name'] . "</td>";
+        echo "<td>" . $row['category_id'] . "</td>";
+        echo "<td>" . $row['user_id'] . "</td>";
+        echo "<td>" . $row['task_status'] . "</td>";
+        echo "<td>" . $row['task_description'] . "</td>";
+        echo "<td>" . $row['task_due_date'] . "</td>";
+        echo "<td>" . $row['task_created_at'] . "</td>";
+        echo "<td>" . $row['task_updated_at'] . "</td>";
+        echo "</tr>";
+    }
+    ?>
+
+  </table>
+
+</body>
+</html>
