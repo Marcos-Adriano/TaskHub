@@ -1,0 +1,67 @@
+Para alterar o conteúdo da página sem recarregar a página inteira ao clicar em um item do menu (ou seja, mudar de uma "li" para outra), você pode usar JavaScript para manipular o DOM dinamicamente. Aqui está um exemplo de como você pode fazer isso:
+
+1. Primeiro, adicione uma classe ou um identificador único a cada item do menu para facilitar a seleção por meio do JavaScript. Por exemplo, adicione a classe "menu-link" a cada "li" do menu, assim:
+
+```html
+<li class="nav-link menu-link">
+    <a href="#">
+        <i class='bx bx-plus icon' ></i>
+        <span class="text nav-text">New Task</span>
+    </a>
+</li>
+
+<li class="nav-link menu-link">
+    <a href="#">
+        <i class='bx bx-home-alt icon' ></i>
+        <span class="text nav-text">Home</span>
+    </a>
+</li>
+
+<!-- Resto do menu -->
+```
+
+2. Em seguida, você pode adicionar um ouvinte de evento de clique (event listener) a cada item do menu usando JavaScript. Quando um item do menu for clicado, o código associado a esse evento será executado.
+
+```html+javascript
+<script>
+    // Obtém todos os elementos do menu com a classe 'menu-link'
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    // Adiciona um ouvinte de evento de clique a cada item do menu
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita o comportamento padrão de recarregar a página ao clicar em um link
+
+            // Remove a classe 'active' de todos os itens do menu
+            menuLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Adiciona a classe 'active' ao item do menu clicado
+            this.classList.add('active');
+
+            // Aqui, você pode realizar as ações necessárias com base no item do menu clicado
+            // Por exemplo, carregar conteúdo dinamicamente com AJAX ou mostrar/ocultar seções da página
+
+            // Exemplo: Mostra/oculta uma seção com base no item do menu clicado
+            const menuText = this.querySelector('.nav-text').textContent;
+
+            if (menuText === 'New Task') {
+                // Mostra a seção de criar nova tarefa
+                // ...
+            } else if (menuText === 'Home') {
+                // Mostra a seção inicial (home)
+                // ...
+            }
+
+            // Você pode adicionar mais condições para cada item do menu, se necessário
+        });
+    });
+</script>
+```
+
+No exemplo acima, usamos `querySelectorAll` para selecionar todos os elementos do menu com a classe 'menu-link'. Em seguida, adicionamos um ouvinte de evento de clique a cada item do menu usando `forEach`. Quando um item do menu é clicado, removemos a classe 'active' de todos os itens do menu e, em seguida, adicionamos a classe 'active' ao item do menu clicado.
+
+Você pode adicionar o código JavaScript acima ao final do seu arquivo HTML, antes do fechamento da tag `</body>`. Certifique-se de que o caminho para o arquivo JavaScript está correto.
+
+Lembre-se de personalizar o código JavaScript para atender às suas necessidades. Você pode carregar conteúdo dinamicamente usando AJAX, mostrar/ocultar seções da página ou executar outras ações com.
