@@ -47,7 +47,7 @@ if (isset($_POST['submit-button'])) {
 
 
     // Redireciona para a página desejada
-    header("Location: plandoit.php");
+    header("Location: teste.php");
     exit(); // Certifique-se de terminar a execução do script após o redirecionamento
 }
 ?>
