@@ -1,16 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-require 'Connection.php'; //Inclui o arquivo de conexão
-
-$init= new Connection();
-
-$init->login();
-
-
-
-?>
-=======
 session_start();
 
 require 'Connection.php'; // Inclui o arquivo de conexão
@@ -47,7 +35,7 @@ if (isset($_POST['submit-button'])) {
 
 
     // Redireciona para a página desejada
-    header("Location: teste.php");
+    header("Location: plandoit.php");
     exit(); // Certifique-se de terminar a execução do script após o redirecionamento
 }
 ?>
@@ -87,5 +75,3 @@ if (isset($_POST['submit-button'])) {
 </body>
 
 </html>
-
->>>>>>> PHP-BRANCH

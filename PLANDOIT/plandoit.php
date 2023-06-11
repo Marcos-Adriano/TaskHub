@@ -1,90 +1,129 @@
+<!-- Coding by CodingLab | www.codinglabweb.com -->
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+    <title>Home</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plandoit HUB</title>
-    <link rel="stylesheet" href="./css/plandoit.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-
-    <script src="./js/plandoit.js" defer></script>
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="./css/plandoit2.css">
+    
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="./images/logo-only.png" alt="logo">
+                </span>
 
-    <div class="header" id="header">
-        <button onclick="toggleSidebar()" class="btn-icon-header">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-            </svg>
-        </button>
-        <div class="logo_header">
-            <img src="./images/123.png" alt="imagem-logo" id="img-logo-header">
-        </div>
-        <div class="navigation-bar" id="navigation-bar">
-            <button onclick="toggleSidebar()" class="btn-icon-header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                </svg>
-            </button>
-            <a href="#">Taskhub</a>
-            <a href="#">Tags</a>
-            <a href="#">About</a>
+                <div class="text logo-text">
+                    <span class="name">PLANDOIT</span>
+                    <span class="profession">Plan and do it!</span>
+                </div>
+            </div>
 
-            <button id="abrir-formulario">Nova Tarefa</button>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
 
-            <div id="formulario" style="display: none;">
-                <h2>Nova Tarefa</h2>
-                <form action="plandoit.php" method="POST">
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="task">
-                    <br>
-                    <label for="descricao">Descrição:</label>
-                    <textarea id="descricao" name="description"></textarea>
-                    <br>
-                    <button type="submit" id="salvar">Salvar</button> <!--onclick="showConfirm()" -->
-               <!--<button type="submit" id="cancelar">Cancelar</button> -->
-                </form>
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#" class="menu-item" data-file="./new-task2.html">
+                            <i class='bx bx-plus icon' ></i>
+                            <span class="text nav-text">New Task</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-tag icon'></i>
+                            <span class="text nav-text">Tags</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-cog icon' ></i>
+                            <span class="text nav-text">Settings</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user icon' ></i>
+                            <span class="text nav-text">About</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon' ></i>
+                            <span class="text nav-text">Donate</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="login.php">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <!-- <i class='bx bx-sun icon sun'></i> -->
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
             </div>
         </div>
 
+    </nav>
+    
+    <div id="content">
+
     </div>
-    </div>
-    <div tabindex='0' onclick="closeSidebar()" class="content" id="content">
-        <h1>CENTRAL DE TASKS</h1>
-        <ul id="lista-tarefas"></ul>
-    </div>
+    
+    <script src="./js/plandoit2.js"></script>
+    <script src="./js/new-task.js"></script>
 
 </body>
-<script src="./js/add-task.js" defer></script>
-
 </html>
-
-
 <?php 
 
 session_start();
  
  try{
 
-<<<<<<<< HEAD:PLANDOIT/plandoit.html
-    include('Connection.php'); //Inclui o arquivo de conexão
-    
-     $init= new Connection();
-    
-     $init->plandoit();
-    
-     }catch(Exception $e){
-========
     
     include('Connection.php'); //Inclui o arquivo de conexão
     
@@ -111,7 +150,7 @@ session_start();
         $prepare->bindParam(4,$teste4);
         $prepare->bindParam(5,$teste5);
         $prepare->bindParam(6,$_POST['description']);
-        $prepare->bindParam(7,$teste7);
+        $prepare->bindParam(7,$_POST['date']);
         $prepare->execute();
                 
         return $prepare->rowCount();
@@ -119,7 +158,6 @@ session_start();
         return $id;
 
     }catch(Exception $e){
->>>>>>>> PHP-BRANCH:PLANDOIT/plandoit.php
          echo ' ';
      }
 
