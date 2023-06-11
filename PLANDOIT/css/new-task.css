@@ -11,7 +11,7 @@
     border-radius: 10px;
 }
 
-h1 {
+h2 {
     color: #304d63;
     margin-bottom: 20px;
 }
@@ -21,7 +21,7 @@ input{
     outline: none;
     margin-bottom: 35px;
     border: none;
-    border-bottom: 1px solid #304d63;
+    border-bottom: 1px solid #ff0000;
     background-color: #E4E9F7;
 }
 
