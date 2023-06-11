@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 
 class Connection
 {
@@ -16,7 +15,7 @@ class Connection
         } catch (Exception $e) {
 
             echo $e->getMessage();
-=======
+
 class Connection
 {
     protected $connection;
@@ -27,12 +26,10 @@ class Connection
             $this->connection = new PDO('mysql:host=localhost;dbname=task_manager', 'root', '');
         } catch (PDOException $e) {
             echo 'Erro de conexão: ' . $e->getMessage();
->>>>>>> PHP-BRANCH
             die();
         }
     }
 
-<<<<<<< HEAD
     public function register()
     {
         $sql = "INSERT INTO users(user_name,user_email,user_password) VALUES(?,?,?)";
@@ -109,7 +106,7 @@ class Connection
 
     }
 }
-=======
+
     public function getConnection()
     {
         return $this->connection;
@@ -117,4 +114,3 @@ class Connection
 }
 
 ?>
->>>>>>> PHP-BRANCH
