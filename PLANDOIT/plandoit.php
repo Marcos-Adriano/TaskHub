@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="./images/logo-only.png" alt="Plandoit Logo">
+                    <img src="./images/logo-only.png" title="Plandoit Logo">
                 </span>
 
                 <div class="text logo-text">
@@ -42,35 +42,35 @@
                     <li class="nav-link">
                         <a href="#" class="menu-item" data-file="./new-task2.html">
                             <i class='bx bx-plus icon' ></i>
-                            <span alt="New Task Button" class="text nav-text">New Task</span>
+                            <span alt="New Task Button" class="text nav-text" title="Click here to create a new task">New Task</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-home-alt icon' ></i>
-                            <span alt="Home Button" class="text nav-text">Home</span>
+                            <span alt="Home Button" class="text nav-text" title="Click here to go to the main menu">Home</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-tag icon'></i>
-                            <span alt="Tags Button" class="text nav-text">Tags</span>
+                            <span alt="Tags Button" class="text nav-text" title="Click here to see tags">Tags</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-cog icon' ></i>
-                            <span alt="Settings Button" class="text nav-text">Settings</span>
+                            <span alt="Settings Button" class="text nav-text" title="Click here to change settings">Settings</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-user icon' ></i>
-                            <span alt="About Button" class="text nav-text">About</span>
+                            <span alt="About Button" class="text nav-text" title="Click here to go to about page">About</span>
                         </a>
                     </li>
 
@@ -88,7 +88,7 @@
                 <li class="">
                     <a href="login.php">
                         <i class='bx bx-log-out icon' ></i>
-                        <span alt="Logout Button" class="text nav-text">Logout</span>
+                        <span alt="Logout Button" class="text nav-text" title="Click Here to Logout">Logout</span>
                     </a>
                 </li>
 
@@ -97,7 +97,7 @@
                         <i class='bx bx-moon icon moon'></i>
                         <!-- <i class='bx bx-sun icon sun'></i> -->
                     </div>
-                    <span alt="Dark/Light Mode Button" class="mode-text text">Dark mode</span>
+                    <span alt="Dark/Light Mode Button" class="mode-text text" title="click here to switch between dark and light mode">Dark mode</span>
 
                     <div class="toggle-switch">
                         <span class="switch"></span>
