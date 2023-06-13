@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 require 'Connection.php'; //Inclui o arquivo de conexão
@@ -9,7 +8,7 @@ $init->register();
 
 include('plandoit.php');
 ?>
-=======
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,24 +25,24 @@ include('plandoit.php');
 
 <body>
     <div class="header">
-        <img src="./images/en.png" alt="logo" />
+        <img src="./images/en.png" title="Plandoit's Main interface with slogan Simplify your Life, Conquer Your Day" />
     </div>
     <div id="register-form">
-        <img src="./images/321.png" alt="LogoForm">
+        <img src="./images/321.png" title="Plandoit's Logo">
         <section id="text-area">
             <h1 id="title">Sign up</h1>
         </section>
         <section id="form">
             <form action="register.php" method="POST" id="input-area" aria-autocomplete="none">
                 <span>Your name:</span><br>
-                <input type="text" id="first-name" name="name"><br><br>
+                <input type="text" id="first-name" name="name" title="Type your email in this box"><br><br>
                 <span>Email:</span><br>
                 <input type="email" id="email-input" name="email"><br><br>
                 <span>Password:</span><br>
-                <input id="password-input" type="password" name="passwordb"><br><br>
+                <input id="password-input" type="password" name="passwordb" title="Type your password in this box"><br><br>
                 <span>Confirm Password:</span><br>
-                <input id="confirm-password-input" type="password"><br><br>
-                <button id="submit-button">Submit</button>
+                <input id="confirm-password-input" type="password" title="Type your password again in this box to confirm it"><br><br>
+                <button id="submit-button" title="Click Here to Submit">Submit</button>
             </form>
 
         </section>
@@ -86,4 +85,3 @@ echo ' ';
 }
 
 ?>
->>>>>>> PHP-BRANCH
