@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="./images/logo-only.png" alt="Plandoit Logo">
+                    <img src="./images/logo-only.png" alt="logo">
                 </span>
 
                 <div class="text logo-text">
@@ -35,49 +35,49 @@
 
                 <li class="search-box">
                     <i class='bx bx-search icon'></i>
-                    <input alt="Search Bar" type="text" placeholder="Search...">
+                    <input type="text" placeholder="Search...">
                 </li>
 
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="#" class="menu-item" data-file="./new-task2.html">
                             <i class='bx bx-plus icon' ></i>
-                            <span alt="New Task Button" class="text nav-text">New Task</span>
+                            <span class="text nav-text">New Task</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-home-alt icon' ></i>
-                            <span alt="Home Button" class="text nav-text">Home</span>
+                            <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-tag icon'></i>
-                            <span alt="Tags Button" class="text nav-text">Tags</span>
+                            <span class="text nav-text">Tags</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-cog icon' ></i>
-                            <span alt="Settings Button" class="text nav-text">Settings</span>
+                            <span class="text nav-text">Settings</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-user icon' ></i>
-                            <span alt="About Button" class="text nav-text">About</span>
+                            <span class="text nav-text">About</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-wallet icon' ></i>
-                            <span alt="Donate Button" class="text nav-text">Donate</span>
+                            <span class="text nav-text">Donate</span>
                         </a>
                     </li>
 
@@ -88,7 +88,7 @@
                 <li class="">
                     <a href="login.php">
                         <i class='bx bx-log-out icon' ></i>
-                        <span alt="Logout Button" class="text nav-text">Logout</span>
+                        <span class="text nav-text">Logout</span>
                     </a>
                 </li>
 
@@ -97,7 +97,7 @@
                         <i class='bx bx-moon icon moon'></i>
                         <!-- <i class='bx bx-sun icon sun'></i> -->
                     </div>
-                    <span alt="Dark/Light Mode Button" class="mode-text text">Dark mode</span>
+                    <span class="mode-text text">Dark mode</span>
 
                     <div class="toggle-switch">
                         <span class="switch"></span>

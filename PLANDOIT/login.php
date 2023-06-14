@@ -56,20 +56,20 @@ if (isset($_POST['submit-button'])) {
 
 <body>
     <div class="header">
-        <img src="./images/en.png" alt="Simplify Your Life, Conquer Your Day" />
+        <img src="./images/en.png" alt="logo" />
     </div>
     <div id="login-form">
-        <img src="./images/321.png" alt="Plandoit's Logo">
+        <img src="./images/321.png" alt="LogoForm">
         <section id="text-area">
             <h1>Sign in</h1>
         </section>
         <form action="login.php" method="POST" id="input-area">
-            <span alt="Type Your Email Below">Email:</span><br>
+            <span>Email:</span><br>
             <input id="user-input" type="text" name="userEmail"><br>
-            <span alt=>Password:</span><br>
+            <span>Password:</span><br>
             <input id="password-input" type="password" name="userPassword"><br>
             <a href="#">Forgot your password?</a>
-            <button type="submit" name="submit-button" id="submit-button" alt="Click Here to Submit">Submit</button>
+            <button type="submit" name="submit-button" id="submit-button">Submit</button>
         </form>
     </div>
 </body>

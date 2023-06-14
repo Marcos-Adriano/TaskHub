@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+<?php
+
+require 'Connection.php'; //Inclui o arquivo de conexão
+
+$init= new Connection();
+
+$init->register();
+
+include('plandoit.php');
+?>
+=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,3 +86,4 @@ echo ' ';
 }
 
 ?>
+>>>>>>> PHP-BRANCH
